@@ -83,10 +83,10 @@ class KlondikeWorld extends World with HasGameReference<KlondikeGame> {
     addButton('Draw 1 or 3', gameMidX + 2 * cardSpaceWidth, Action.changeDraw);
     addButton('Have fun', gameMidX + 3 * cardSpaceWidth, Action.haveFun);
 
-    final camera = game.camera;
-    camera.viewfinder.visibleGameSize = playAreaSize;
-    camera.viewfinder.position = Vector2(gameMidX, 0);
-    camera.viewfinder.anchor = Anchor.topCenter;
+  final camera = game.camera;
+  camera.viewfinder.visibleGameSize = playAreaSize;
+  camera.viewfinder.position = Vector2(gameMidX, playAreaSize.y / 2);
+  camera.viewfinder.anchor = Anchor.center;
 
     deal();
   }
